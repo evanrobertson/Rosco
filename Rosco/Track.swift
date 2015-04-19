@@ -14,17 +14,9 @@ class Track : Equatable {
         self.name = name
         self.artist = artist
     }
-    
-    
 }
 
 // MARK: Equatable
 func ==(lhs: Track, rhs: Track) -> Bool {
     return lhs.artist == rhs.artist && lhs.name == rhs.name
 }
-
-//extension Track : Equatable {
-//    func ==(lhs: Track, rhs Track) -> Bool {
-//    return false
-//    }
-//}
