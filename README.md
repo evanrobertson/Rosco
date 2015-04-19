@@ -1,7 +1,7 @@
 # Rosco
 Mac OSX Bowtie replacement
 
-![Rosco Desktop Image](http://i.imgur.com/6h0KF3f.jpg)
+![Rosco Desktop Image](http://i.imgur.com/0svAhU7.png)
 
 Inspired by [Bowtie app](http://bowtieapp.com) and [Unnamed Theme](http://beautifulblood.deviantart.com/art/Unnamed-255040591)
 
