@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		202697EE1ADFBE67006DD45A /* Chronos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202697ED1ADFBE67006DD45A /* Chronos.framework */; };
+		202697EF1ADFBE67006DD45A /* Chronos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 202697ED1ADFBE67006DD45A /* Chronos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		202697F31ADFCC4A006DD45A /* SpotifyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */; };
+		202697F51ADFCE9B006DD45A /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F41ADFCE9B006DD45A /* Track.swift */; };
+		203AEA501AE3677200B59120 /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AEA4F1AE3677200B59120 /* SpotifyService.swift */; };
+		20CE9AC61ADFA7DF00258EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */; };
+		20CE9ACA1ADFA7DF00258EDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9AC91ADFA7DF00258EDA /* Images.xcassets */; };
+		20CE9ACD1ADFA7DF00258EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */; };
+		20CE9AD91ADFA7DF00258EDA /* RoscoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AD81ADFA7DF00258EDA /* RoscoTests.swift */; };
+		20CE9AE31ADFA80D00258EDA /* RoscoPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AE21ADFA80D00258EDA /* RoscoPanelController.swift */; };
+		20CE9AE51ADFA85B00258EDA /* RoscoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AE41ADFA85B00258EDA /* RoscoPanel.swift */; };
+		20CE9AE71ADFA9E800258EDA /* RoscoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AE61ADFA9E800258EDA /* RoscoView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20CE9AD31ADFA7DF00258EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20CE9AB81ADFA7DE00258EDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20CE9ABF1ADFA7DF00258EDA;
+			remoteInfo = Rosco;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		202697F01ADFBE67006DD45A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				202697EF1ADFBE67006DD45A /* Chronos.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		202697ED1ADFBE67006DD45A /* Chronos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chronos.framework; path = ../Carthage/Build/Mac/Chronos.framework; sourceTree = "<group>"; };
+		202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyApplication.swift; sourceTree = "<group>"; };
+		202697F41ADFCE9B006DD45A /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		203AEA4F1AE3677200B59120 /* SpotifyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
+		20CE9AC01ADFA7DF00258EDA /* Rosco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rosco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CE9AC41ADFA7DF00258EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20CE9AC91ADFA7DF00258EDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		20CE9ACC1ADFA7DF00258EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20CE9AD21ADFA7DF00258EDA /* RoscoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoscoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CE9AD71ADFA7DF00258EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20CE9AD81ADFA7DF00258EDA /* RoscoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoscoTests.swift; sourceTree = "<group>"; };
+		20CE9AE21ADFA80D00258EDA /* RoscoPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoscoPanelController.swift; sourceTree = "<group>"; };
+		20CE9AE41ADFA85B00258EDA /* RoscoPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoscoPanel.swift; sourceTree = "<group>"; };
+		20CE9AE61ADFA9E800258EDA /* RoscoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoscoView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20CE9ABD1ADFA7DF00258EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				202697EE1ADFBE67006DD45A /* Chronos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CE9ACF1ADFA7DF00258EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		202697EA1ADFBBB2006DD45A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				202697ED1ADFBE67006DD45A /* Chronos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		202697F11ADFCC26006DD45A /* Script Bridges */ = {
+			isa = PBXGroup;
+			children = (
+				202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */,
+			);
+			name = "Script Bridges";
+			sourceTree = "<group>";
+		};
+		203AEA511AE3677B00B59120 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				203AEA4F1AE3677200B59120 /* SpotifyService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		20CE9AB71ADFA7DE00258EDA = {
+			isa = PBXGroup;
+			children = (
+				20CE9AC21ADFA7DF00258EDA /* Rosco */,
+				20CE9AD51ADFA7DF00258EDA /* RoscoTests */,
+				20CE9AC11ADFA7DF00258EDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20CE9AC11ADFA7DF00258EDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20CE9AC01ADFA7DF00258EDA /* Rosco.app */,
+				20CE9AD21ADFA7DF00258EDA /* RoscoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20CE9AC21ADFA7DF00258EDA /* Rosco */ = {
+			isa = PBXGroup;
+			children = (
+				20CE9AC91ADFA7DF00258EDA /* Images.xcassets */,
+				202697F11ADFCC26006DD45A /* Script Bridges */,
+				203AEA511AE3677B00B59120 /* Services */,
+				20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */,
+				20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */,
+				20CE9AE21ADFA80D00258EDA /* RoscoPanelController.swift */,
+				20CE9AE41ADFA85B00258EDA /* RoscoPanel.swift */,
+				20CE9AE61ADFA9E800258EDA /* RoscoView.swift */,
+				202697F41ADFCE9B006DD45A /* Track.swift */,
+				20CE9AC31ADFA7DF00258EDA /* Supporting Files */,
+				202697EA1ADFBBB2006DD45A /* Frameworks */,
+			);
+			path = Rosco;
+			sourceTree = "<group>";
+		};
+		20CE9AC31ADFA7DF00258EDA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20CE9AC41ADFA7DF00258EDA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20CE9AD51ADFA7DF00258EDA /* RoscoTests */ = {
+			isa = PBXGroup;
+			children = (
+				20CE9AD81ADFA7DF00258EDA /* RoscoTests.swift */,
+				20CE9AD61ADFA7DF00258EDA /* Supporting Files */,
+			);
+			path = RoscoTests;
+			sourceTree = "<group>";
+		};
+		20CE9AD61ADFA7DF00258EDA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20CE9AD71ADFA7DF00258EDA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20CE9ABF1ADFA7DF00258EDA /* Rosco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20CE9ADC1ADFA7DF00258EDA /* Build configuration list for PBXNativeTarget "Rosco" */;
+			buildPhases = (
+				20CE9ABC1ADFA7DF00258EDA /* Sources */,
+				20CE9ABD1ADFA7DF00258EDA /* Frameworks */,
+				20CE9ABE1ADFA7DF00258EDA /* Resources */,
+				202697F01ADFBE67006DD45A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rosco;
+			productName = Rosco;
+			productReference = 20CE9AC01ADFA7DF00258EDA /* Rosco.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20CE9AD11ADFA7DF00258EDA /* RoscoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20CE9ADF1ADFA7DF00258EDA /* Build configuration list for PBXNativeTarget "RoscoTests" */;
+			buildPhases = (
+				20CE9ACE1ADFA7DF00258EDA /* Sources */,
+				20CE9ACF1ADFA7DF00258EDA /* Frameworks */,
+				20CE9AD01ADFA7DF00258EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20CE9AD41ADFA7DF00258EDA /* PBXTargetDependency */,
+			);
+			name = RoscoTests;
+			productName = RoscoTests;
+			productReference = 20CE9AD21ADFA7DF00258EDA /* RoscoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20CE9AB81ADFA7DE00258EDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Evan Robertson";
+				TargetAttributes = {
+					20CE9ABF1ADFA7DF00258EDA = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					20CE9AD11ADFA7DF00258EDA = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 20CE9ABF1ADFA7DF00258EDA;
+					};
+				};
+			};
+			buildConfigurationList = 20CE9ABB1ADFA7DE00258EDA /* Build configuration list for PBXProject "Rosco" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20CE9AB71ADFA7DE00258EDA;
+			productRefGroup = 20CE9AC11ADFA7DF00258EDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20CE9ABF1ADFA7DF00258EDA /* Rosco */,
+				20CE9AD11ADFA7DF00258EDA /* RoscoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20CE9ABE1ADFA7DF00258EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CE9ACA1ADFA7DF00258EDA /* Images.xcassets in Resources */,
+				20CE9ACD1ADFA7DF00258EDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CE9AD01ADFA7DF00258EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20CE9ABC1ADFA7DF00258EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				202697F31ADFCC4A006DD45A /* SpotifyApplication.swift in Sources */,
+				20CE9AE51ADFA85B00258EDA /* RoscoPanel.swift in Sources */,
+				20CE9AE31ADFA80D00258EDA /* RoscoPanelController.swift in Sources */,
+				20CE9AC61ADFA7DF00258EDA /* AppDelegate.swift in Sources */,
+				203AEA501AE3677200B59120 /* SpotifyService.swift in Sources */,
+				20CE9AE71ADFA9E800258EDA /* RoscoView.swift in Sources */,
+				202697F51ADFCE9B006DD45A /* Track.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CE9ACE1ADFA7DF00258EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CE9AD91ADFA7DF00258EDA /* RoscoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20CE9AD41ADFA7DF00258EDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20CE9ABF1ADFA7DF00258EDA /* Rosco */;
+			targetProxy = 20CE9AD31ADFA7DF00258EDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20CE9ACC1ADFA7DF00258EDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20CE9ADA1ADFA7DF00258EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20CE9ADB1ADFA7DF00258EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		20CE9ADD1ADFA7DF00258EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rosco",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Rosco/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		20CE9ADE1ADFA7DF00258EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rosco",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Rosco/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		20CE9AE01ADFA7DF00258EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RoscoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rosco.app/Contents/MacOS/Rosco";
+			};
+			name = Debug;
+		};
+		20CE9AE11ADFA7DF00258EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RoscoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rosco.app/Contents/MacOS/Rosco";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20CE9ABB1ADFA7DE00258EDA /* Build configuration list for PBXProject "Rosco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CE9ADA1ADFA7DF00258EDA /* Debug */,
+				20CE9ADB1ADFA7DF00258EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20CE9ADC1ADFA7DF00258EDA /* Build configuration list for PBXNativeTarget "Rosco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CE9ADD1ADFA7DF00258EDA /* Debug */,
+				20CE9ADE1ADFA7DF00258EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20CE9ADF1ADFA7DF00258EDA /* Build configuration list for PBXNativeTarget "RoscoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CE9AE01ADFA7DF00258EDA /* Debug */,
+				20CE9AE11ADFA7DF00258EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20CE9AB81ADFA7DE00258EDA /* Project object */;
+}
