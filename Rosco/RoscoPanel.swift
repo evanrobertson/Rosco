@@ -9,7 +9,7 @@
 import AppKit
 
 class RoscoPanel : NSPanel {
-    //MARK: TODO: I found this on google, I should put a reference here to that if I can find it again
+    //MARK: Taken from http://stackoverflow.com/a/29386935
     
     /// Just in case Apple decides to make `_cornerMask` public and remove the underscore prefix,
     /// we name the property `cornerMask`.
