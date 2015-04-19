@@ -9,5 +9,9 @@ Currently supports Spotify, and looking to support iTunes and Mopidy.
 
 
 ### Requirements
-OSX 10.10 Yosemite
+* OSX 10.10 Yosemite
+* [Carthage](https://github.com/Carthage/Carthage)
+
+### Install
+Run `carthage update` in Terminal from the root directory
 
