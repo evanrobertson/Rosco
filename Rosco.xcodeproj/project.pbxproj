@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2017D4891AE4717D005C398A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2017D4881AE4717D005C398A /* StringExtensions.swift */; };
 		202697EE1ADFBE67006DD45A /* Chronos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202697ED1ADFBE67006DD45A /* Chronos.framework */; };
 		202697EF1ADFBE67006DD45A /* Chronos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 202697ED1ADFBE67006DD45A /* Chronos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		202697F31ADFCC4A006DD45A /* SpotifyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */; };
 		202697F51ADFCE9B006DD45A /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F41ADFCE9B006DD45A /* Track.swift */; };
 		203AEA501AE3677200B59120 /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AEA4F1AE3677200B59120 /* SpotifyService.swift */; };
-		20A684281AE3AEA800BC99EB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A684271AE3AEA800BC99EB /* StringExtensions.swift */; };
 		20CE9AC61ADFA7DF00258EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */; };
 		20CE9ACA1ADFA7DF00258EDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9AC91ADFA7DF00258EDA /* Images.xcassets */; };
 		20CE9ACD1ADFA7DF00258EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */; };
@@ -47,11 +47,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2017D4881AE4717D005C398A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		202697ED1ADFBE67006DD45A /* Chronos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chronos.framework; path = ../Carthage/Build/Mac/Chronos.framework; sourceTree = "<group>"; };
 		202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyApplication.swift; sourceTree = "<group>"; };
 		202697F41ADFCE9B006DD45A /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		203AEA4F1AE3677200B59120 /* SpotifyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
-		20A684271AE3AEA800BC99EB /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		20CE9AC01ADFA7DF00258EDA /* Rosco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rosco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CE9AC41ADFA7DF00258EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2017D4871AE47164005C398A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2017D4881AE4717D005C398A /* StringExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		202697EA1ADFBBB2006DD45A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				20CE9AC91ADFA7DF00258EDA /* Images.xcassets */,
+				2017D4871AE47164005C398A /* Extensions */,
 				202697F11ADFCC26006DD45A /* Script Bridges */,
 				203AEA511AE3677B00B59120 /* Services */,
 				20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */,
@@ -269,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2017D4891AE4717D005C398A /* StringExtensions.swift in Sources */,
 				202697F31ADFCC4A006DD45A /* SpotifyApplication.swift in Sources */,
 				20CE9AE51ADFA85B00258EDA /* RoscoPanel.swift in Sources */,
 				20CE9AE31ADFA80D00258EDA /* RoscoPanelController.swift in Sources */,
