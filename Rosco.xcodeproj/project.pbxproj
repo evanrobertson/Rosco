@@ -12,6 +12,7 @@
 		202697F31ADFCC4A006DD45A /* SpotifyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */; };
 		202697F51ADFCE9B006DD45A /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F41ADFCE9B006DD45A /* Track.swift */; };
 		203AEA501AE3677200B59120 /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AEA4F1AE3677200B59120 /* SpotifyService.swift */; };
+		20A684281AE3AEA800BC99EB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A684271AE3AEA800BC99EB /* StringExtensions.swift */; };
 		20CE9AC61ADFA7DF00258EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */; };
 		20CE9ACA1ADFA7DF00258EDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9AC91ADFA7DF00258EDA /* Images.xcassets */; };
 		20CE9ACD1ADFA7DF00258EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyApplication.swift; sourceTree = "<group>"; };
 		202697F41ADFCE9B006DD45A /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		203AEA4F1AE3677200B59120 /* SpotifyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
+		20A684271AE3AEA800BC99EB /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		20CE9AC01ADFA7DF00258EDA /* Rosco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rosco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CE9AC41ADFA7DF00258EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };

@@ -38,8 +38,8 @@ class RoscoView : NSVisualEffectView {
     func didUpdateTrack(notification: NSNotification) {
         var track = notification.object as! Track
         
-        titleLabel.stringValue = track.name
-        artistNameLabel.stringValue = track.artist
+        titleLabel.stringValue = track.name.truncate(35, trailing: "…")
+        artistNameLabel.stringValue = track.artist.truncate(35, trailing: "…")
     }
     
     func notPlaying() {
