@@ -23,6 +23,7 @@ Bowtie development stopped in early 2012 with a comment that it would be release
 ### Install
 
 Run in Xcode
+
 1. Navigate to root directory in Terminal
 2. Run `carthage update`
 3. Run `open Rosco.xcodeproj`
@@ -30,6 +31,7 @@ Run in Xcode
 
 
 To build and open from Terminal
+
 1. Navigate to root directory
 2. Run `carthage update`
 3. Run `xcodebuild`
