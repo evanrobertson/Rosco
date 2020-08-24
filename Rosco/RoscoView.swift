@@ -7,7 +7,6 @@
 //
 
 import AppKit
-import Chronos
 
 class RoscoView : NSVisualEffectView {
     
@@ -20,39 +19,59 @@ class RoscoView : NSVisualEffectView {
         isDark = true
         
         super.init(coder: coder)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateTrack(_:)), name: Notification.Name("RoscoUpdateTrack"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notPlayingNotificationReceived(_:)), name: Notification.Name("RoscoNotPlaying"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleLightDark(_:)), name: Notification.Name("RoscoToggleLightDark"), object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateTrack:", name: "RoscoUpdateTrack", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "notPlaying", name: "RoscoNotPlaying", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleLightDark", name: "RoscoToggleLightDark", object: nil)
+        maskImage = NSImage(size: NSSize(width: 100, height: 22), flipped: false) { rect in
+            
+            let bezierPath = NSBezierPath()
+            bezierPath.move(to: NSPoint(x: 0, y: 22))
+            bezierPath.curve(to: NSPoint(x: 13, y: 22), controlPoint1: NSPoint(x: 0, y: 22), controlPoint2: NSPoint(x: -8, y: 22))
+            bezierPath.curve(to: NSPoint(x: 58, y: 8), controlPoint1: NSPoint(x: 34, y: 22), controlPoint2: NSPoint(x: 43, y: 14))
+            bezierPath.curve(to: NSPoint(x: 100, y: 0), controlPoint1: NSPoint(x: 73, y: 2), controlPoint2: NSPoint(x: 100, y: 0))
+            bezierPath.line(to: NSPoint(x: 0, y: 0))
+            bezierPath.line(to: NSPoint(x: 0, y: 22))
+            bezierPath.close()
+            bezierPath.fill()
+            
+            return true
+        }
+        maskImage?.capInsets = NSEdgeInsets(top: 0.0, left: 1.0, bottom: 0.0, right: 88.0)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    override func viewWillMoveToWindow(newWindow: NSWindow?) {
+    override func viewWillMove(toWindow newWindow: NSWindow?) {
         // Default to not playing
         notPlaying()
-    }
-
-    func didUpdateTrack(notification: NSNotification) {
-        var track = notification.object as! Track
-        
-        titleLabel.stringValue = track.name.truncate(35, trailing: "…")
-        artistNameLabel.stringValue = track.artist.truncate(35, trailing: "…")
     }
     
     func notPlaying() {
         titleLabel.stringValue = "Not Playing"
         artistNameLabel.stringValue = ""
     }
+
+    @objc func didUpdateTrack(_ notification: NSNotification) {
+        let track = notification.object as! Track
+        
+        titleLabel.stringValue = track.name.truncate(length: 35, trailing: "…")
+        artistNameLabel.stringValue = track.artist.truncate(length: 35, trailing: "…")
+    }
     
-    func toggleLightDark() {
+    @objc func notPlayingNotificationReceived(_ notification: NSNotification) {
+        notPlaying()
+    }
+    
+    @objc func toggleLightDark(_ notification: NSNotification) {
         if (isDark) {
-            appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+            appearance = NSAppearance(named: NSAppearance.Name.vibrantLight)
             isDark = false
         } else {
-            appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+            appearance = NSAppearance(named: NSAppearance.Name.vibrantDark)
             isDark = true
         }
     }

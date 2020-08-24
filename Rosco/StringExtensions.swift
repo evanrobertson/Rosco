@@ -12,12 +12,13 @@ extension String {
     /// Truncates the string to length number of characters and
     /// appends optional trailing string if longer
     func truncate(length: Int, trailing: String? = nil) -> String {
-        if count(self) > length {
-            var stringValue = self.substringToIndex(advance(self.startIndex, length))
-            stringValue = stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-            return stringValue + (trailing ?? "")
-        } else {
-            return self
-        }
+        return self
+//        if count(self) > length {
+//            var stringValue = self.substringToIndex(advance(self.startIndex, length))
+//            stringValue = stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+//            return stringValue + (trailing ?? "")
+//        } else {
+//            return self
+//        }
     }
 }

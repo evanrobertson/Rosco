@@ -8,17 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2017D4891AE4717D005C398A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2017D4881AE4717D005C398A /* StringExtensions.swift */; };
-		202697EE1ADFBE67006DD45A /* Chronos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202697ED1ADFBE67006DD45A /* Chronos.framework */; };
-		202697EF1ADFBE67006DD45A /* Chronos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 202697ED1ADFBE67006DD45A /* Chronos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		202697F31ADFCC4A006DD45A /* SpotifyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */; };
 		202697F51ADFCE9B006DD45A /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202697F41ADFCE9B006DD45A /* Track.swift */; };
-		203AEA501AE3677200B59120 /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AEA4F1AE3677200B59120 /* SpotifyService.swift */; };
+		203AEA501AE3677200B59120 /* NowPlayingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AEA4F1AE3677200B59120 /* NowPlayingService.swift */; };
 		20CE9AC61ADFA7DF00258EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */; };
 		20CE9ACA1ADFA7DF00258EDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9AC91ADFA7DF00258EDA /* Images.xcassets */; };
 		20CE9ACD1ADFA7DF00258EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */; };
 		20CE9AD91ADFA7DF00258EDA /* RoscoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AD81ADFA7DF00258EDA /* RoscoTests.swift */; };
 		20CE9AE31ADFA80D00258EDA /* RoscoPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AE21ADFA80D00258EDA /* RoscoPanelController.swift */; };
-		20CE9AE51ADFA85B00258EDA /* RoscoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AE41ADFA85B00258EDA /* RoscoPanel.swift */; };
 		20CE9AE71ADFA9E800258EDA /* RoscoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE9AE61ADFA9E800258EDA /* RoscoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +35,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				202697EF1ADFBE67006DD45A /* Chronos.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,9 +44,9 @@
 /* Begin PBXFileReference section */
 		2017D4881AE4717D005C398A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		202697ED1ADFBE67006DD45A /* Chronos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chronos.framework; path = ../Carthage/Build/Mac/Chronos.framework; sourceTree = "<group>"; };
-		202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyApplication.swift; sourceTree = "<group>"; };
 		202697F41ADFCE9B006DD45A /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		203AEA4F1AE3677200B59120 /* SpotifyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
+		203AEA4F1AE3677200B59120 /* NowPlayingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingService.swift; sourceTree = "<group>"; };
+		209E954124F34EFF00B17970 /* Rosco.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rosco.entitlements; sourceTree = "<group>"; };
 		20CE9AC01ADFA7DF00258EDA /* Rosco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rosco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CE9AC41ADFA7DF00258EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +56,6 @@
 		20CE9AD71ADFA7DF00258EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20CE9AD81ADFA7DF00258EDA /* RoscoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoscoTests.swift; sourceTree = "<group>"; };
 		20CE9AE21ADFA80D00258EDA /* RoscoPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoscoPanelController.swift; sourceTree = "<group>"; };
-		20CE9AE41ADFA85B00258EDA /* RoscoPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoscoPanel.swift; sourceTree = "<group>"; };
 		20CE9AE61ADFA9E800258EDA /* RoscoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoscoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202697EE1ADFBE67006DD45A /* Chronos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,18 +93,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		202697F11ADFCC26006DD45A /* Script Bridges */ = {
-			isa = PBXGroup;
-			children = (
-				202697F21ADFCC4A006DD45A /* SpotifyApplication.swift */,
-			);
-			name = "Script Bridges";
-			sourceTree = "<group>";
-		};
 		203AEA511AE3677B00B59120 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				203AEA4F1AE3677200B59120 /* SpotifyService.swift */,
+				203AEA4F1AE3677200B59120 /* NowPlayingService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -137,14 +122,13 @@
 		20CE9AC21ADFA7DF00258EDA /* Rosco */ = {
 			isa = PBXGroup;
 			children = (
+				209E954124F34EFF00B17970 /* Rosco.entitlements */,
 				20CE9AC91ADFA7DF00258EDA /* Images.xcassets */,
 				2017D4871AE47164005C398A /* Extensions */,
-				202697F11ADFCC26006DD45A /* Script Bridges */,
 				203AEA511AE3677B00B59120 /* Services */,
 				20CE9ACB1ADFA7DF00258EDA /* Main.storyboard */,
 				20CE9AC51ADFA7DF00258EDA /* AppDelegate.swift */,
 				20CE9AE21ADFA80D00258EDA /* RoscoPanelController.swift */,
-				20CE9AE41ADFA85B00258EDA /* RoscoPanel.swift */,
 				20CE9AE61ADFA9E800258EDA /* RoscoView.swift */,
 				202697F41ADFCE9B006DD45A /* Track.swift */,
 				20CE9AC31ADFA7DF00258EDA /* Supporting Files */,
@@ -223,21 +207,23 @@
 		20CE9AB81ADFA7DE00258EDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Evan Robertson";
 				TargetAttributes = {
 					20CE9ABF1ADFA7DF00258EDA = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 1160;
 					};
 					20CE9AD11ADFA7DF00258EDA = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 1160;
 						TestTargetID = 20CE9ABF1ADFA7DF00258EDA;
 					};
 				};
 			};
 			buildConfigurationList = 20CE9ABB1ADFA7DE00258EDA /* Build configuration list for PBXProject "Rosco" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -279,11 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2017D4891AE4717D005C398A /* StringExtensions.swift in Sources */,
-				202697F31ADFCC4A006DD45A /* SpotifyApplication.swift in Sources */,
-				20CE9AE51ADFA85B00258EDA /* RoscoPanel.swift in Sources */,
 				20CE9AE31ADFA80D00258EDA /* RoscoPanelController.swift in Sources */,
 				20CE9AC61ADFA7DF00258EDA /* AppDelegate.swift in Sources */,
-				203AEA501AE3677200B59120 /* SpotifyService.swift in Sources */,
+				203AEA501AE3677200B59120 /* NowPlayingService.swift in Sources */,
 				20CE9AE71ADFA9E800258EDA /* RoscoView.swift in Sources */,
 				202697F51ADFCE9B006DD45A /* Track.swift in Sources */,
 			);
@@ -327,19 +311,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -355,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -371,13 +366,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -393,9 +398,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
@@ -403,7 +409,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rosco/Rosco.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Rosco",
@@ -412,7 +420,9 @@
 				INFOPLIST_FILE = Rosco/Info.plist;
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evanrobertson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -420,7 +430,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rosco/Rosco.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Rosco",
@@ -429,7 +441,9 @@
 				INFOPLIST_FILE = Rosco/Info.plist;
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evanrobertson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -448,7 +462,9 @@
 				);
 				INFOPLIST_FILE = RoscoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evanrobertson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rosco.app/Contents/MacOS/Rosco";
 			};
 			name = Debug;
@@ -464,7 +480,9 @@
 				);
 				INFOPLIST_FILE = RoscoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evanrobertson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rosco.app/Contents/MacOS/Rosco";
 			};
 			name = Release;
