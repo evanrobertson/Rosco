@@ -13,9 +13,7 @@ Bowtie development stopped in early 2012 with a comment that it would be release
 - [x] Light and Dark Vibrancy Themes
 - [x] Supports system now playing API
 
-### Ideas
-- [ ] Hide dock icon
-- [ ] Show menu bar icon
+### Future Development
 - [ ] Show now playing application icon
 - [ ] Allow for resizing/scaling
 - [ ] Move to different points on the screen

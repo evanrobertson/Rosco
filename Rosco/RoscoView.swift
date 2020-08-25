@@ -13,11 +13,7 @@ class RoscoView : NSVisualEffectView {
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var artistNameLabel: NSTextField!
     
-    var isDark: Bool
-    
     required init?(coder: NSCoder) {
-        isDark = true
-        
         super.init(coder: coder)
 
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateTrack(_:)), name: Notification.Name("RoscoUpdateTrack"), object: nil)
@@ -56,7 +52,10 @@ class RoscoView : NSVisualEffectView {
     }
 
     @objc func didUpdateTrack(_ notification: NSNotification) {
-        let track = notification.object as! Track
+        guard let track = notification.object as? Track else {
+            notPlaying()
+            return
+        }
         
         titleLabel.stringValue = track.name.truncate(length: 35, trailing: "…")
         artistNameLabel.stringValue = track.artist.truncate(length: 35, trailing: "…")
@@ -67,12 +66,15 @@ class RoscoView : NSVisualEffectView {
     }
     
     @objc func toggleLightDark(_ notification: NSNotification) {
-        if (isDark) {
+        guard let appearanceName = appearance?.name else {
+            return;
+        }
+        
+        switch appearanceName {
+        case NSAppearance.Name.vibrantDark:
             appearance = NSAppearance(named: NSAppearance.Name.vibrantLight)
-            isDark = false
-        } else {
+        default:
             appearance = NSAppearance(named: NSAppearance.Name.vibrantDark)
-            isDark = true
         }
     }
 }
