@@ -16,6 +16,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Rosco" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
+                                        <menuItem title="Toggle Light/Dark" id="t4L-oH-enP">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleLightDark:" target="Voe-Tx-rLC" id="wfo-6S-nR5"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="About Rosco" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -23,22 +29,10 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Rosco" keyEquivalent="q" id="4sb-4s-VLi">
-                                            <connections>
-                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="View" id="H8h-7b-M4v">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="View" id="HyV-fh-RgO">
-                                    <items>
-                                        <menuItem title="Toggle Light/Dark" id="t4L-oH-enP">
+                                        <menuItem title="Quit Rosco" id="4sb-4s-VLi">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="toggleLightDark:" target="Voe-Tx-rLC" id="wfo-6S-nR5"/>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -50,7 +44,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Rosco" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Rosco" customModuleProvider="target">
+                    <connections>
+                        <outlet property="menu" destination="uQy-DD-JDr" id="0xu-Vh-pGF"/>
+                    </connections>
+                </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
