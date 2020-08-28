@@ -18,7 +18,6 @@ class RoscoView : NSVisualEffectView {
 
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateTrack(_:)), name: Notification.Name("RoscoUpdateTrack"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notPlayingNotificationReceived(_:)), name: Notification.Name("RoscoNotPlaying"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(toggleLightDark(_:)), name: Notification.Name("RoscoToggleLightDark"), object: nil)
         
         maskImage = NSImage(size: NSSize(width: 100, height: 22), flipped: false) { rect in
             
@@ -39,6 +38,10 @@ class RoscoView : NSVisualEffectView {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func updateLayer() {
+        
     }
     
     override func viewWillMove(toWindow newWindow: NSWindow?) {
@@ -63,18 +66,5 @@ class RoscoView : NSVisualEffectView {
     
     @objc func notPlayingNotificationReceived(_ notification: NSNotification) {
         notPlaying()
-    }
-    
-    @objc func toggleLightDark(_ notification: NSNotification) {
-        guard let appearanceName = appearance?.name else {
-            return;
-        }
-        
-        switch appearanceName {
-        case NSAppearance.Name.vibrantDark:
-            appearance = NSAppearance(named: NSAppearance.Name.vibrantLight)
-        default:
-            appearance = NSAppearance(named: NSAppearance.Name.vibrantDark)
-        }
     }
 }
