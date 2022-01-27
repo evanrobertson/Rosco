@@ -11,7 +11,7 @@ import AppKit
 class RoscoView: NSVisualEffectView {
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var artistNameLabel: NSTextField!
-    
+
     var isPlaying: Bool = false
 
     required init?(coder: NSCoder) {
@@ -19,6 +19,7 @@ class RoscoView: NSVisualEffectView {
 
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateTrack(_:)), name: Notification.Name("RoscoUpdateTrack"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notPlayingNotificationReceived(_:)), name: Notification.Name("RoscoNotPlaying"), object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(spaceChanged(_:)), name: NSWorkspace.activeSpaceDidChangeNotification, object: nil)
 
         maskImage = NSImage(size: NSSize(width: 100, height: 22), flipped: false) { _ in
 
@@ -42,6 +43,7 @@ class RoscoView: NSVisualEffectView {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+        NSWorkspace.shared.notificationCenter.removeObserver(self)
     }
 
     func notPlaying() {
@@ -65,22 +67,47 @@ class RoscoView: NSVisualEffectView {
         show(withDuration: 0.5)
     }
 
+    func setSize(_ size: NSControl.ControlSize) {
+        hide(withDuration: 0.2) {
+            self.titleLabel.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: size), weight: .bold)
+            self.artistNameLabel.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: size), weight: .regular)
+
+            self.show(withDuration: 0.2)
+        }
+    }
+
     func hide(withDuration duration: CGFloat) {
+        hide(withDuration: duration, completionHandler: nil)
+    }
+
+    func hide(withDuration duration: CGFloat, completionHandler: (() -> Void)?) {
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = TimeInterval(duration)
             self.window?.animator().alphaValue = 0
-        }, completionHandler: nil)
+        }, completionHandler: completionHandler)
     }
 
     func show(withDuration duration: CGFloat) {
+        show(withDuration: duration, completionHandler: nil)
+    }
+
+    func show(withDuration duration: CGFloat, completionHandler: (() -> Void)?) {
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = TimeInterval(duration)
             self.window?.animator().alphaValue = 1
-        }, completionHandler: nil)
+        }, completionHandler: completionHandler)
     }
 
     @objc func notPlayingNotificationReceived(_: NSNotification) {
         notPlaying()
+    }
+
+    @objc func spaceChanged(_: NSNotification) {
+        // Space changes appear to have the side effect of leaving the effects view with a gray background
+        // triggering a rerender appears to solve the issue
+        if isPlaying {
+            setNeedsDisplay(bounds)
+        }
     }
 
     override func mouseEntered(with _: NSEvent) {
@@ -88,7 +115,7 @@ class RoscoView: NSVisualEffectView {
     }
 
     override func mouseExited(with _: NSEvent) {
-        if (isPlaying) {
+        if isPlaying {
             show(withDuration: 0.2)
         }
     }

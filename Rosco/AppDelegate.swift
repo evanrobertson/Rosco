@@ -15,7 +15,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var lightMenuItem: NSMenuItem!
     @IBOutlet var darkMenuItem: NSMenuItem!
 
+    @IBOutlet var sizeMiniMenuItem: NSMenuItem!
+    @IBOutlet var sizeSmallMenuItem: NSMenuItem!
+    @IBOutlet var sizeRegularMenuItem: NSMenuItem!
+
     let styleKey = "RoscoStyle"
+    let sizeKey = "RoscoSize"
 
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
@@ -31,6 +36,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let appearanceName = UserDefaults.standard.object(forKey: styleKey) as? NSAppearance.Name
         setStyleMenuStates(appearanceName: appearanceName)
         setAppStyle(appearanceName: appearanceName)
+
+        let appSizeRaw = UserDefaults.standard.object(forKey: sizeKey) as? UInt ?? 0
+        let appSize = NSControl.ControlSize(rawValue: appSizeRaw) ?? .small
+        setSizeMenuStates(forSize: appSize)
+        setAppSize(appSize)
     }
 
     func applicationWillTerminate(aNotification _: NSNotification) {
@@ -53,6 +63,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         darkMenuItem.state = appearanceName == NSAppearance.Name.vibrantDark ? .on : .off
     }
 
+    func setSizeMenuStates(forSize size: NSControl.ControlSize) {
+        sizeMiniMenuItem.state = size == .mini ? .on : .off
+        sizeSmallMenuItem.state = size == .small ? .on : .off
+        sizeRegularMenuItem.state = size == .regular ? .on : .off
+    }
+
     func setAppStyle(appearanceName: NSAppearance.Name?) {
         var appearance: NSAppearance?
 
@@ -65,6 +81,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         if let roscoView = getRoscoView() {
             roscoView.appearance = appearance
+        }
+    }
+
+    func setAppSize(_ size: NSControl.ControlSize?) {
+        let size = size ?? .small
+        UserDefaults.standard.set(size.rawValue, forKey: sizeKey)
+
+        if let roscoView = getRoscoView() {
+            roscoView.setSize(size)
         }
     }
 
@@ -83,5 +108,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let appearanceName = NSAppearance.Name.vibrantDark
         setStyleMenuStates(appearanceName: appearanceName)
         setAppStyle(appearanceName: appearanceName)
+    }
+
+    @IBAction func selectSize(_ sender: Any) {
+        guard let item = sender as? NSMenuItem else { return }
+
+        var size: NSControl.ControlSize = .small
+
+        switch item.title {
+        case "Mini":
+            size = .mini
+
+        case "Small":
+            size = .small
+
+        case "Regular":
+            size = .regular
+
+        default:
+            break
+        }
+
+        setAppSize(size)
+        setSizeMenuStates(forSize: size)
     }
 }

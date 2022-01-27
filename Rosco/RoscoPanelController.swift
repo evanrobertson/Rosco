@@ -10,6 +10,8 @@ import AppKit
 
 class RoscoPanelController: NSWindowController {
     override func windowDidLoad() {
+        window?.delegate = self
+
         if let window = window as? NSPanel {
             window.collectionBehavior = .canJoinAllSpaces
             window.isFloatingPanel = true
@@ -19,5 +21,11 @@ class RoscoPanelController: NSWindowController {
             window.level = NSWindow.Level.floating
             window.ignoresMouseEvents = true
         }
+    }
+}
+
+extension RoscoPanelController: NSWindowDelegate {
+    func windowDidResize(_: Notification) {
+        window?.setFrameOrigin(CGPoint.zero)
     }
 }

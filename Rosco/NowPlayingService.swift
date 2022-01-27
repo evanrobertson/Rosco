@@ -66,12 +66,13 @@ class NowPlayingService {
 
         MRMediaRemoteGetNowPlayingInfo(DispatchQueue.main) { information in
             guard let artist = information["kMRMediaRemoteNowPlayingInfoArtist"] as? String,
-                  let title = information["kMRMediaRemoteNowPlayingInfoTitle"] as? String
+                  let title = information["kMRMediaRemoteNowPlayingInfoTitle"] as? String,
+                  let album = information["kMRMediaRemoteNowPlayingInfoAlbum"] as? String
             else {
                 return
             }
 
-            if artist.isEmpty {
+            if artist.isEmpty, album.isEmpty {
                 self.sendNotPlayingNotification()
                 return
             }
@@ -79,6 +80,8 @@ class NowPlayingService {
             if self.isPlaying {
                 if !artist.isEmpty, !title.isEmpty {
                     self.sendUpdateTrackNotification(track: Track(name: title, artist: artist))
+                } else if !album.isEmpty, !title.isEmpty {
+                    self.sendUpdateTrackNotification(track: Track(name: title, artist: album))
                 } else {
                     self.sendNotPlayingNotification()
                 }
