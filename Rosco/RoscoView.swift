@@ -11,6 +11,8 @@ import AppKit
 class RoscoView: NSVisualEffectView {
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var artistNameLabel: NSTextField!
+    
+    var isPlaying: Bool = false
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -43,10 +45,12 @@ class RoscoView: NSVisualEffectView {
     }
 
     func notPlaying() {
+        isPlaying = false
         hide(withDuration: 0.5)
     }
 
     func setTrack(_ track: Track) {
+        isPlaying = true
         titleLabel.stringValue = track.name.truncate(length: 32, trailing: "…")
         artistNameLabel.stringValue = track.artist.truncate(length: 32, trailing: "…")
     }
@@ -84,6 +88,8 @@ class RoscoView: NSVisualEffectView {
     }
 
     override func mouseExited(with _: NSEvent) {
-        show(withDuration: 0.2)
+        if (isPlaying) {
+            show(withDuration: 0.2)
+        }
     }
 }
