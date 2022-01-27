@@ -8,19 +8,18 @@
 
 import AppKit
 
-class RoscoView : NSVisualEffectView {
-    
-    @IBOutlet weak var titleLabel: NSTextField!
-    @IBOutlet weak var artistNameLabel: NSTextField!
-    
+class RoscoView: NSVisualEffectView {
+    @IBOutlet var titleLabel: NSTextField!
+    @IBOutlet var artistNameLabel: NSTextField!
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateTrack(_:)), name: Notification.Name("RoscoUpdateTrack"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notPlayingNotificationReceived(_:)), name: Notification.Name("RoscoNotPlaying"), object: nil)
-        
-        maskImage = NSImage(size: NSSize(width: 100, height: 22), flipped: false) { rect in
-            
+
+        maskImage = NSImage(size: NSSize(width: 100, height: 22), flipped: false) { _ in
+
             let bezierPath = NSBezierPath()
             bezierPath.move(to: NSPoint(x: 0, y: 22))
             bezierPath.curve(to: NSPoint(x: 13, y: 22), controlPoint1: NSPoint(x: 0, y: 22), controlPoint2: NSPoint(x: -8, y: 22))
@@ -30,28 +29,26 @@ class RoscoView : NSVisualEffectView {
             bezierPath.line(to: NSPoint(x: 0, y: 22))
             bezierPath.close()
             bezierPath.fill()
-            
+
             return true
         }
         maskImage?.capInsets = NSEdgeInsets(top: 0.0, left: 1.0, bottom: 0.0, right: 88.0)
+
+        let trackingArea = NSTrackingArea(rect: NSRect.zero, options: [.mouseEnteredAndExited, .activeAlways, .inVisibleRect], owner: self, userInfo: nil)
+        addTrackingArea(trackingArea)
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    override func updateLayer() {
-        
-    }
-    
-    override func viewWillMove(toWindow newWindow: NSWindow?) {
-        // Default to not playing
-        notPlaying()
-    }
-    
+
     func notPlaying() {
-        titleLabel.stringValue = "Not Playing"
-        artistNameLabel.stringValue = ""
+        hide(withDuration: 0.5)
+    }
+
+    func setTrack(_ track: Track) {
+        titleLabel.stringValue = track.name.truncate(length: 32, trailing: "…")
+        artistNameLabel.stringValue = track.artist.truncate(length: 32, trailing: "…")
     }
 
     @objc func didUpdateTrack(_ notification: NSNotification) {
@@ -59,12 +56,34 @@ class RoscoView : NSVisualEffectView {
             notPlaying()
             return
         }
-        
-        titleLabel.stringValue = track.name.truncate(length: 32, trailing: "…")
-        artistNameLabel.stringValue = track.artist.truncate(length: 32, trailing: "…")
+
+        setTrack(track)
+        show(withDuration: 0.5)
     }
-    
-    @objc func notPlayingNotificationReceived(_ notification: NSNotification) {
+
+    func hide(withDuration duration: CGFloat) {
+        NSAnimationContext.runAnimationGroup({ context in
+            context.duration = TimeInterval(duration)
+            self.window?.animator().alphaValue = 0
+        }, completionHandler: nil)
+    }
+
+    func show(withDuration duration: CGFloat) {
+        NSAnimationContext.runAnimationGroup({ context in
+            context.duration = TimeInterval(duration)
+            self.window?.animator().alphaValue = 1
+        }, completionHandler: nil)
+    }
+
+    @objc func notPlayingNotificationReceived(_: NSNotification) {
         notPlaying()
+    }
+
+    override func mouseEntered(with _: NSEvent) {
+        hide(withDuration: 0.2)
+    }
+
+    override func mouseExited(with _: NSEvent) {
+        show(withDuration: 0.2)
     }
 }

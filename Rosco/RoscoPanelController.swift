@@ -8,14 +8,16 @@
 
 import AppKit
 
-class RoscoPanelController : NSWindowController {
-
+class RoscoPanelController: NSWindowController {
     override func windowDidLoad() {
         if let window = window as? NSPanel {
             window.collectionBehavior = .canJoinAllSpaces
             window.isFloatingPanel = true
             window.setFrameOrigin(NSPoint(x: 0, y: 0))
-            window.backgroundColor = NSColor.clear
+            window.alphaValue = 0
+            window.animationBehavior = .none
+            window.level = NSWindow.Level.floating
+            window.ignoresMouseEvents = true
         }
     }
 }

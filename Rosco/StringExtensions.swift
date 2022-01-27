@@ -12,8 +12,8 @@ extension String {
     /// Truncates the string to length number of characters and
     /// appends optional trailing string if longer
     func truncate(length: Int, trailing: String? = nil) -> String {
-        let trimmed = self.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
-        
+        let trimmed = trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+
         if trimmed.count > length {
             let substring = trimmed.prefix(length)
             return substring + (trailing ?? "")

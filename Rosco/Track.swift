@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Evan Robertson. All rights reserved.
 //
 
-class Track : Equatable {
+class Track: Equatable {
     let artist: String
     let name: String
-    
+
     init(name: String, artist: String) {
         self.name = name
         self.artist = artist
@@ -17,6 +17,7 @@ class Track : Equatable {
 }
 
 // MARK: Equatable
-func ==(lhs: Track, rhs: Track) -> Bool {
+
+func == (lhs: Track, rhs: Track) -> Bool {
     return lhs.artist == rhs.artist && lhs.name == rhs.name
 }
